@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BsInfoCircleFill } from 'react-icons/bs';
 import PageHeaderContent from '../../Components/pageHeaderContent';
 import { Line } from 'rc-progress';
