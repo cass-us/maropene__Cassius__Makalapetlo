@@ -1,6 +1,4 @@
-import React from 'react';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
+
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Home from './Containers/home/index.jsx';
 import Resume from './Containers/resume/index.jsx';
@@ -14,14 +12,10 @@ import Contacts from './Containers/contacts/index.jsx';
 import './App.scss';
 
 function App() {
-  const handleInit = async (main) => {
-    await loadFull(main);
-  };
 
   const location = useLocation();
   console.log(location);
 
-  const renderParticlesJsInHomePage = location.pathname === '/';
 
   return (
     <div className='App'>

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { FaBars, FaReact } from "react-icons/fa";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { SiEagle } from "react-icons/si";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./styles.scss";
+
 const data = [
   { label: "Home", to: "/" },
   { label: "About Me", to: "/about" },
@@ -23,7 +25,7 @@ const NavBar = () => {
       <nav className="navBar">
         <div className="navBar__container">
           <Link to={"/"} className="navBar__container__logo">
-            <FaReact size={30} />
+            <SiEagle size={30} />
           </Link>
         </div>
         <ul className={`navBar__container__menu ${toggleicon ? "active" : ""}`}>
@@ -32,6 +34,7 @@ const NavBar = () => {
               <Link
                 className="navBar__container__menu__item__links"
                 to={item.to}
+                onClick={() => setToggleIcon(false)} // Close the menu when an item is clicked
               >
                 {item.label}
               </Link>
