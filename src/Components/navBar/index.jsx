@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { FaBars } from "react-icons/fa";
 import { SiEagle } from "react-icons/si";
+import { FaBars, FaReact } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import "./styles.scss";
@@ -9,7 +9,7 @@ const data = [
   { label: "Home", to: "/" },
   { label: "About Me", to: "/about" },
   { label: "Skills", to: "/skills" },
-  { label: "Resume", to: "/resume" },
+  { label: "Project", to: "/project" },
   { label: "Contacts", to: "/contacts" },
 ];
 
@@ -28,13 +28,14 @@ const NavBar = () => {
             <SiEagle size={30} />
           </Link>
         </div>
+        
         <ul className={`navBar__container__menu ${toggleicon ? "active" : ""}`}>
           {data.map((item, key) => (
             <li key={key} className="navBar__container__menu__item">
               <Link
                 className="navBar__container__menu__item__links"
                 to={item.to}
-                onClick={() => setToggleIcon(false)} // Close the menu when an item is clicked
+                onClick={() => setToggleIcon(false)}
               >
                 {item.label}
               </Link>
