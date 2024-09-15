@@ -1,4 +1,5 @@
 import React from 'react';
+import image from "./assets/cassius.jpg";
 import './styles.scss';
 import { useNavigate } from 'react-router-dom';
 import { Animate } from 'react-simple-animate';
@@ -12,6 +13,9 @@ const Home = () => {
 
   return (
     <section id="home" className="home">
+      <div className="home__image__wrapper">
+        <img src={image} alt="Maropene Makalapetlo" className="home__image" />
+      </div>
       <div className="home__text__wrapper">
         <h1>
           Hi, I am Maropene Makalapetlo.
@@ -23,10 +27,10 @@ const Home = () => {
         play
         duration={0.5}
         delay={1.5}
-        start={{ 
+        start={{
           transform: "translateY(550px)",
         }}
-        end={{ 
+        end={{
           transform: "translateX(0px)",
         }}
       >

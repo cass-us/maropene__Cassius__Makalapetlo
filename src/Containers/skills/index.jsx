@@ -1,4 +1,3 @@
-
 import { BsInfoCircleFill } from 'react-icons/bs';
 import PageHeaderContent from '../../Components/pageHeaderContent';
 import { Line } from 'rc-progress';
@@ -11,6 +10,7 @@ const skilldata = [
     data: [
       { skillName: "HTML5", percentage: "90" },
       { skillName: "CSS3", percentage: "70" },
+      { skillName: "Tailwind", percentage: "70" },
       { skillName: "React.js", percentage: "80" },
     ],
   },
@@ -39,26 +39,28 @@ const Skills = () => {
         headerText="My Skills"
         icon={<BsInfoCircleFill size={40} />}
       />
-      <div className='skills__content__wrapper'>
+      <div className="skills__content__wrapper">
         {skilldata.map((item, index) => (
-          <div key={index} className='skills__content__wrapper__inner-content'>
+          <div key={index} className="skills__content__wrapper__inner-content">
             <AnimateKeyframes
               play
               duration={1}
-              keyframes={['opacity: 1', 'opacity: 0']}
+              keyframes={["opacity: 1", "opacity: 0"]}
               iterationCount="1"
             >
-              <h3 className='skills__content__wrapper__inner-content__category-text'>{item.label}</h3>
+              <h3 className="skills__content__wrapper__inner-content__category-text">
+                {item.label}
+              </h3>
               <div>
                 {item.data.map((skillItem, x) => (
                   <div className="progressWrapper" key={x}>
                     <p>{skillItem.skillName}</p>
                     <Line
                       percent={skillItem.percentage}
-                      strokeWidth="2"
+                      strokeWidth="6"
                       strokeColor="var(--yellow-theme-main-color)"
                       trailWidth={4}
-                      strokeLinecap="square"
+                      strokeLinecap="round"
                     />
                   </div>
                 ))}
