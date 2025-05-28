@@ -16,23 +16,22 @@ const Home = () => {
       <div className="home__image__wrapper">
         <img src={image} alt="Maropene Makalapetlo" className="home__image" />
       </div>
+
       <div className="home__text__wrapper">
         <h1>
           Hi, I am Maropene Makalapetlo.
           <br />
           Software Developer
         </h1>
+        <p className="home__subtitle">Building innovative web experiences 🚀</p>
       </div>
+
       <Animate
         play
         duration={0.5}
         delay={1.5}
-        start={{
-          transform: "translateY(550px)",
-        }}
-        end={{
-          transform: "translateX(0px)",
-        }}
+        start={{ transform: "translateY(550px)" }}
+        end={{ transform: "translateX(0px)" }}
       >
         <div className="home__contact-me">
           <button onClick={handleNavigateToContactMePage}>Hire Me</button>

@@ -1,8 +1,8 @@
-import { BsInfoCircleFill } from 'react-icons/bs';
-import PageHeaderContent from '../../Components/pageHeaderContent';
-import { Line } from 'rc-progress';
-import { AnimateKeyframes } from 'react-simple-animate';
-import './styles.scss';
+import { BsInfoCircleFill } from "react-icons/bs";
+import PageHeaderContent from "../../Components/pageHeaderContent";
+import { Line } from "rc-progress";
+import { Animate } from "react-simple-animate";
+import "./styles.scss";
 
 const skilldata = [
   {
@@ -41,23 +41,23 @@ const Skills = () => {
       />
       <div className="skills__content__wrapper">
         {skilldata.map((item, index) => (
-          <div key={index} className="skills__content__wrapper__inner-content">
-            <AnimateKeyframes
-              play
-              duration={1}
-              keyframes={["opacity: 1", "opacity: 0"]}
-              iterationCount="1"
-            >
-              <h3 className="skills__content__wrapper__inner-content__category-text">
-                {item.label}
-              </h3>
+          <Animate
+            key={index}
+            play
+            duration={1.2}
+            delay={index * 0.5 + 0.3} // staggered animation
+            start={{ opacity: 0, transform: "translateX(-50px)" }}
+            end={{ opacity: 1, transform: "translateX(0)" }}
+          >
+            <div className="skills__content__wrapper__inner-content">
+              <h3 className="skills__category-text">{item.label}</h3>
               <div>
                 {item.data.map((skillItem, x) => (
                   <div className="progressWrapper" key={x}>
-                    <p>{skillItem.skillName}</p>
+                    <p className="skillName">{skillItem.skillName}</p>
                     <Line
                       percent={skillItem.percentage}
-                      strokeWidth="6"
+                      strokeWidth={6}
                       strokeColor="var(--yellow-theme-main-color)"
                       trailWidth={4}
                       strokeLinecap="round"
@@ -65,8 +65,8 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </AnimateKeyframes>
-          </div>
+            </div>
+          </Animate>
         ))}
       </div>
     </section>

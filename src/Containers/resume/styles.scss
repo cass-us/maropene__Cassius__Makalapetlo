@@ -1,0 +1,52 @@
+.resume {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+    &__section {
+      margin-bottom: 3rem;
+    }
+  
+    &__section-title {
+      font-size: 2rem;
+      color: var(--yellow-theme-main-color);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+  
+    &__list {
+      list-style: none;
+      padding-left: 0;
+    }
+  
+    &__item {
+      margin-bottom: 1.8rem;
+      background: #1f1f1f;
+      padding: 1.6rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(255, 209, 0, 0.2);
+  
+      h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+        color: var(--yellow-theme-main-color);
+      }
+  
+      .resume__period {
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #bbb;
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+  
+      p {
+        font-size: 1rem;
+        line-height: 1.4;
+        color: #ddd;
+      }
+    }
+  }
+  

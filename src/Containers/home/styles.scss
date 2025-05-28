@@ -1,100 +1,142 @@
 .home {
-    position: relative;
-    height: 100%;
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__image__wrapper {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &__image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: black;
+    opacity: 0.9;
+    object-fit: cover;
+    border: 3px solid var(--yellow-theme-main-color);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__text__wrapper {
+    display: flex;
     align-items: center;
     flex-direction: column;
-  
-    &__image__wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-  
-    &__image {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%; 
-      background-color: black;
-      opacity: 0.9;
-      object-fit: cover; 
-      border: 3px solid var(--yellow-theme-main-color); 
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-  
-    &__text__wrapper {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      justify-content: center;
-  
-      h1 {
-        color: var(--yellow-theme-main-color);
-        margin: 0;
-        font-weight: 500;
-        font-size: 6rem;
-        line-height: 10rem;
-        position: relative;
-        overflow: hidden;
-        white-space: nowrap;
-        animation: typingEffectAnimation 2.5s steps(30, end);
-      }
-    }
-  
-    &__contact-me {
-      display: flex;
-      justify-content: center;
-      margin: 15px;
-  
-      button {
-        cursor: pointer;
-        padding: 10px 70px;
-        font-size: 2rem;
-        background: transparent;
-        color: var(--yellow-theme-main-color);
-        border: 1.5px solid var(--yellow-theme-main-color);
-        border-radius: 4px;
-        font-weight: 500;
-  
-        &:hover {
-          background: var(--yellow-theme-main-color);
-          color: black;
-        }
-      }
-    }
-  }
-  
-  @media only screen and (max-width: 550px) {
-    .home__text__wrapper h1 {
-      font-size: 2.5rem;
-      line-height: 6rem;
-    }
-  }
-  
-  @media only screen and (min-width: 551px) and (max-width: 768px) {
-    .home__text__wrapper h1 {
-      font-size: 2rem;
-      line-height: 4rem;
-    }
-  }
-  
-  @media only screen and (min-width: 769px) and (max-width: 990px) {
-    .home__text__wrapper h1 {
+    text-align: center;
+    justify-content: center;
+
+    h1 {
+      color: var(--yellow-theme-main-color);
+      margin: 0;
+      font-weight: 500;
       font-size: 6rem;
-      line-height: 4rem;
+      line-height: 10rem;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typingEffectAnimation 2.5s steps(30, end);
+
+      &::after {
+        content: "|";
+        animation: blink 1s infinite;
+        color: var(--yellow-theme-main-color);
+        font-weight: bold;
+        margin-left: 5px;
+      }
+    }
+
+    .home__subtitle {
+      color: white;
+      font-size: 1.8rem;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+      opacity: 0.8;
     }
   }
-  
-  @keyframes typingEffectAnimation {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
+
+  &__contact-me {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+
+    button {
+      cursor: pointer;
+      padding: 10px 70px;
+      font-size: 2rem;
+      background: transparent;
+      color: var(--yellow-theme-main-color);
+      border: 1.5px solid var(--yellow-theme-main-color);
+      border-radius: 4px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: var(--yellow-theme-main-color);
+        color: black;
+      }
     }
   }
-  
+}
+
+@keyframes typingEffectAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Responsive typography adjustments */
+@media only screen and (max-width: 550px) {
+  .home__text__wrapper h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 768px) {
+  .home__text__wrapper h1 {
+    font-size: 4rem;
+    line-height: 6rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 990px) {
+  .home__text__wrapper h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.6rem;
+  }
+}

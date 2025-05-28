@@ -1,88 +1,49 @@
 .skills {
-  padding: 50px;
-  background-color: grey;
+  padding: 3rem 2rem;
+  background-color: #121212;
+  color: #ddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   &__content__wrapper {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 20px;
     flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-    &__inner-content {
-      flex: 1;
-      background-color: black;
-      opacity: .9;
-      padding: 30px;
-      opacity: 0.8;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &__content__wrapper__inner-content {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 320px;
+    box-shadow: 0 8px 24px rgba(255, 209, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-      &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      &__category-text {
-        color: var(--yellow-theme-main-color);
-        font-size: 26px;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-align: center;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 10px;
-
-        &::before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: 0;
-          width: 60px;
-          height: 4px;
-          background: var(--yellow-theme-main-color);
-        }
-      }
-
-      .progressWrapper {
-        width: 100%;
-        margin: 20px 0;
-
-        p {
-          font-size: 1.5rem;
-          color: #555;
-          text-transform: uppercase;
-          margin-bottom: 10px;
-        }
-
-        .rc-progress-line {
-          height: 6px;
-          border-radius: 5px;
-
-          .rc-progress-line-trail {
-            stroke: #e6e6e6;
-          }
-
-          .rc-progress-line-path {
-            stroke: linear-gradient(90deg, #f39c12 0%, #e74c3c 100%);
-            transition: stroke-dashoffset 0.6s ease 0s;
-          }
-        }
-      }
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(255, 209, 0, 0.5);
     }
   }
-}
 
-@media only screen and (max-width: 768px) {
-  .skills {
-    padding: 20px;
+  .skills__category-text {
+    font-size: 1.8rem;
+    color: var(--yellow-theme-main-color);
+    margin-bottom: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: center;
+  }
 
-    &__content__wrapper {
-      flex-direction: column;
-      gap: 30px;
+  .progressWrapper {
+    margin-bottom: 1.2rem;
+
+    p.skillName {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #fff;
+      font-size: 1.1rem;
     }
   }
 }

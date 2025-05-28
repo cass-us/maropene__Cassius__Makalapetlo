@@ -7,6 +7,7 @@ import NavBar from './Components/navBar/index.jsx';
 import Project from './Containers/project/project.jsx';
 import Contacts from './Containers/contacts/index.jsx';
 import Footer from './Containers/Footer/Footer.jsx';
+import Resume from './Containers/resume/index.jsx';
 import './App.scss';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <Route path='/project' element={<Project />} />
           <Route path='/skills' element={<Skills />} />
           <Route path='/portfolio' element={<Portfolio />} />
-          <Route path='/contacts' element={<Contacts />} />
+          <Route path='/resume' element={<Resume />} />
         </Routes>
       
       </div>
